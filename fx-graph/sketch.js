@@ -1,8 +1,8 @@
 let w = 800,
     h = 600,
-    xmin = -10,
-    xmax = 20,
-    ymin = -5,
+    xmin = 0,
+    xmax = 0,
+    ymin = 0,
     s = (w-10)/(xmax-xmin), //scale
     ox = 0,
     oy= 0;
