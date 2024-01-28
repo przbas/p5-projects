@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/addons/p5.sound.min.js"></script>
     <link rel="stylesheet" type="text/css" href="style.css">
@@ -8,12 +11,29 @@
 
   </head>
   <body>
+    <h1>Kalkulator graficzny</h1>
     <main>
     </main>
     <script src="sketch.js"></script>
-    <p>X min, Y min, X max:</p>
-    <input type="number" name="xmin" id="xmin" value="-10">
-    <input type="number" name="ymin" id="ymin" value="-9">
-    <input type="number" name="xmax" id="xmax" value="15">
+    <div class="param">
+      <div class="param-left">
+        <p>X min</p>
+        <input type="number" name="xmin" id="xmin" value="-10">
+      </div>
+      <div class="param-center">
+        <p>Y min</p>
+        <input type="number" name="ymin" id="ymin" value="-9">
+      </div>
+      <div class="param-right">
+        <p>X max</p>
+        <input type="number" name="xmax" id="xmax" value="15">
+      </div>
+    </div>
+    <div class="functions">
+      <p>f(x) = <input type="number" name="fx-1" id="fx-1" value="2">*x^2+
+        <input type="number" name="fx-2" id="fx-2" value="-12">*x+
+        <input type="number" name="fx-3" id="fx-3" value="10">
+      </p>
+    </div>      
   </body>
 </html>
