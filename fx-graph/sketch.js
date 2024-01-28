@@ -1,11 +1,14 @@
 let w = 800,
     h = 600,
-    xmin = -5,
-    xmax = 13,
+    xmin = -10,
+    xmax = 20,
     ymin = -5,
     s = (w-10)/(xmax-xmin), //scale
     ox = 0,
     oy= 0;
+    xmin = document.getElementById("xmin").value;
+    xmax = document.getElementById("xmax").value;
+    ymin = document.getElementById("ymin").value;
 
 
 function setup() {
@@ -15,6 +18,10 @@ function setup() {
   function draw() {
     background(240);
     // axis
+    xmin = document.getElementById("xmin").value;
+    xmax = document.getElementById("xmax").value;
+    ymin = document.getElementById("ymin").value;
+    s = (w-10)/(xmax-xmin), //scale
     s = floor(s);
     ox = 5-xmin*s;
     oy = 5-ymin*s;
@@ -57,7 +64,7 @@ function setup() {
     strokeWeight(3);
 
     // parabola ax2+bx+c
-    let a = -2, b = 12, c = -10;   
+    let a = 2, b = -12, c = 10;   
     stroke(250, 0, 0);
     for (let i = 0; i < w; i++) {
       x = (i-ox)/s;
@@ -66,7 +73,7 @@ function setup() {
     }
 
     // prosta ax+b
-    a = 1.2, b = -2;
+    a = 0.5, b = -5;
     stroke(0, 255, 0);
     for (let i = 0; i < w; i++) {
       x = (i-ox)/s;
