@@ -6,16 +6,16 @@ let w = 800,
     s = (w-10)/(xmax-xmin), //scale
     ox = 0,
     oy= 0;
-    xmin = document.getElementById("xmin").value;
-    xmax = document.getElementById("xmax").value;
-    ymin = document.getElementById("ymin").value;
 
 
 function setup() {
     createCanvas(w, h);
+    xmin = document.getElementById("xmin").value;
+    xmax = document.getElementById("xmax").value;
+    ymin = document.getElementById("ymin").value;
   }
   
-  function draw() {
+function draw() {
     background(240);
     // axis
     xmin = document.getElementById("xmin").value;
@@ -80,4 +80,38 @@ function setup() {
       point(ox+x*s,h-oy-(y*s));
     }
     
+}
+
+function keyReleased() {
+  if (keyCode === LEFT_ARROW) {
+    xmin=1*xmin-1;
+    xmax=1*xmax-1;
+    document.getElementById("xmin").value = xmin;
+    document.getElementById("xmax").value = xmax;
+  } else if (keyCode === RIGHT_ARROW) {
+    xmin=1*xmin+1;
+    xmax=1*xmax+1;
+    document.getElementById("xmin").value = xmin;
+    document.getElementById("xmax").value = xmax;
+  } else if (keyCode === UP_ARROW) {
+    ymin=1*ymin+1;
+    document.getElementById("ymin").value = ymin;
+  } else if (keyCode === DOWN_ARROW) {
+    ymin=1*ymin-1;
+    document.getElementById("ymin").value = ymin;
+  } else if (keyCode === 107) {
+    ymin=1*ymin+1;
+    document.getElementById("ymin").value = ymin;
+    xmin=1*xmin+1;
+    xmax=1*xmax-1;
+    document.getElementById("xmin").value = xmin;
+    document.getElementById("xmax").value = xmax;
+  } else if (keyCode === 109) {
+    ymin=1*ymin-1;
+    document.getElementById("ymin").value = ymin;
+    xmin=1*xmin-1;
+    xmax=1*xmax+1;
+    document.getElementById("xmin").value = xmin;
+    document.getElementById("xmax").value = xmax;
   }
+}
