@@ -73,9 +73,9 @@ function draw() {
     a = document.getElementById("fx-1").value*1;
     b = document.getElementById("fx-2").value*1;
     c = document.getElementById("fx-3").value*1;
-    stroke(20, 150, 0);
-    for (let i = 0; i < w; i++) {
-      x = (i-ox)/s;
+    stroke(document.getElementById("color-1").value);
+    for (let i = 0; i < w*10; i++) {
+      x = (i/10-ox)/s;
       y = a*x*x +b*x +c;
       point(ox+x*s,h-oy-(y*s));
     }
