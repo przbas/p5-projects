@@ -19,35 +19,51 @@
     <div class="param">
       <div class="param-left">
         <input type="button" class="button" value="←" onclick="keyCode = LEFT_ARROW; keyReleased();">
-        <p>X min</p>
-        <input type="number" name="xmin" id="xmin" value="-10">
+        <input hidden type="number" name="xmin" id="xmin" value="-10">
       </div>
       <div class="param-center">
         <input type="button" class="button" value="↓"  onclick="keyCode = DOWN_ARROW; keyReleased();">
         <input type="button" class="button" value="-"  onclick="keyCode = 109; keyReleased();">
         <input type="button" class="button" value="+"  onclick="keyCode = 107; keyReleased();">
         <input type="button" class="button" value="↑"  onclick="keyCode = UP_ARROW; keyReleased();">
-        <p>Y min</p>
-        <input type="number" name="ymin" id="ymin" value="-9">
+        <input hidden type="number" name="ymin" id="ymin" value="-9">
       </div>
       <div class="param-right">
         <input type="button" class="button" value="→"  onclick="keyCode = RIGHT_ARROW; keyReleased();">
-        <p>X max</p>
-        <input type="number" name="xmax" id="xmax" value="15">
+        <input hidden type="number" name="xmax" id="xmax" value="15">
       </div>
     </div>
     <div class="functions">
-      <input type="color" name="color-1" id="color-1" value="#149600">
-      <select name="func-type-1" id="func-type-1">
-        <option value="wielomian-1">Wielomian</option>
-        <option value="odwrotna-1">Proporcjonalność odwrotna</option>
-        <option value="wykladnicza-1">Wykładnicza</option>
-        <option value="logarytm-1">Logarytmiczna</option>
-      </select>
-      <p>f(x) = <input type="number" name="fx-1" id="fx-1" value="2">*x^2+
-        <input type="number" name="fx-2" id="fx-2" value="-12">*x+
-        <input type="number" name="fx-3" id="fx-3" value="10">
-      </p>
-    </div>      
+      <div class="function">
+        <input type="color" name="color-1" id="color-1" value="#149600">
+        <select name="func-type-1" id="func-type-1">
+          <option value="wielomian-1">Wielomian</option>
+          <option value="odwrotna-1">Proporcjonalność odwrotna</option>
+          <option value="wykladnicza-1">Wykładnicza</option>
+          <option value="logarytm-1">Logarytmiczna</option>
+        </select>
+        <p id="fx">f(x) = <input type="number" name="fx-1" id="fx-1" value="0">•x<sup>4</sup>+
+          <input type="number" name="fx-2" id="fx-2" value="0">•x<sup>3</sup>+
+          <input type="number" name="fx-3" id="fx-3" value="2">•x<sup>2</sup>+
+          <input type="number" name="fx-4" id="fx-4" value="-12">•x+
+          <input type="number" name="fx-5" id="fx-5" value="10">
+        </p>
+      </div>
+      <div class="function">
+        <input type="color" name="color-2" id="color-2" value="#006690">
+        <select name="func-type-2" id="func-type-2">
+          <option value="wielomian-2">Wielomian</option>
+          <option value="odwrotna-2">Proporcjonalność odwrotna</option>
+          <option value="wykladnicza-2">Wykładnicza</option>
+          <option value="logarytm-2">Logarytmiczna</option>
+        </select>
+        <p id="gx">g(x) = <input type="number" name="gx-1" id="gx-1" value="0">•x<sup>4</sup>+
+          <input type="number" name="gx-2" id="gx-2" value="0">•x<sup>3</sup>+
+          <input type="number" name="gx-3" id="gx-3" value="0">•x<sup>2</sup>+
+          <input type="number" name="gx-4" id="gx-4" value="0.5">•x+
+          <input type="number" name="gx-5" id="gx-5" value="2">
+        </p>
+      </div>
+    </div>        
   </body>
 </html>

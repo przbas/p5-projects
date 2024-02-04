@@ -67,19 +67,38 @@ function draw() {
     //point(ox+x*s,h-oy-(y*s));
     strokeWeight(3);
 
-    let a = 0, b = 0, c = 0;
+    let a = 0, b = 0, c = 0, d = 0, e = 0;
 
     //fx
-    a = document.getElementById("fx-1").value*1;
-    b = document.getElementById("fx-2").value*1;
-    c = document.getElementById("fx-3").value*1;
-    stroke(document.getElementById("color-1").value);
-    for (let i = 0; i < w*10; i++) {
-      x = (i/10-ox)/s;
-      y = a*x*x +b*x +c;
-      point(ox+x*s,h-oy-(y*s));
+    if (document.getElementById("func-type-1").value == "wielomian-1") {
+      a = document.getElementById("fx-1").value*1;
+      b = document.getElementById("fx-2").value*1;
+      c = document.getElementById("fx-3").value*1;
+      d = document.getElementById("fx-4").value*1;
+      e = document.getElementById("fx-5").value*1;
+      stroke(document.getElementById("color-1").value);
+      for (let i = 0; i < w*10; i++) {
+        x = (i/10-ox)/s;
+        y = a*x*x*x*x +b*x*x*x +c*x*x +d*x +e;
+        point(ox+x*s,h-oy-(y*s));
+      }  
     }
     
+
+    //gx
+    if (document.getElementById("func-type-2").value == "wielomian-2") {
+      a = document.getElementById("gx-1").value*1;
+      b = document.getElementById("gx-2").value*1;
+      c = document.getElementById("gx-3").value*1;
+      d = document.getElementById("gx-4").value*1;
+      e = document.getElementById("gx-5").value*1;
+      stroke(document.getElementById("color-2").value);
+      for (let i = 0; i < w*10; i++) {
+        x = (i/10-ox)/s;
+        y = a*x*x*x*x +b*x*x*x +c*x*x +d*x +e;
+        point(ox+x*s,h-oy-(y*s));
+      }
+    }
 }
 
 function keyReleased() {
