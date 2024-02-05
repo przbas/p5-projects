@@ -36,7 +36,7 @@
     <div class="functions">
       <div class="function">
         <input type="color" name="color-1" id="color-1" value="#149600">
-        <select name="func-type-1" id="func-type-1">
+        <select name="func-type-1" id="func-type-1" onchange="func1()">
           <option value="wielomian-1">Wielomian</option>
           <option value="odwrotna-1">Proporcjonalność odwrotna</option>
           <option value="wykladnicza-1">Wykładnicza</option>
@@ -51,7 +51,7 @@
       </div>
       <div class="function">
         <input type="color" name="color-2" id="color-2" value="#006690">
-        <select name="func-type-2" id="func-type-2">
+        <select name="func-type-2" id="func-type-2" onchange="func2()">
           <option value="wielomian-2">Wielomian</option>
           <option value="odwrotna-2">Proporcjonalność odwrotna</option>
           <option value="wykladnicza-2">Wykładnicza</option>
@@ -64,6 +64,34 @@
           <input type="number" name="gx-5" id="gx-5" value="2">
         </p>
       </div>
-    </div>        
+    </div>
+    
+  <script>
+    function func1() {
+      if (document.getElementById("func-type-1").value == "wielomian-1") {
+        document.getElementById("fx").innerHTML = 'f(x) = <input type="number" name="fx-1" id="fx-1" value="0">•x<sup>4</sup>+<input type="number" name="fx-2" id="fx-2" value="0">•x<sup>3</sup>+<input type="number" name="fx-3" id="fx-3" value="2">•x<sup>2</sup>+<input type="number" name="fx-4" id="fx-4" value="-12">•x+<input type="number" name="fx-5" id="fx-5" value="10">';
+      } else if (document.getElementById("func-type-1").value == "odwrotna-1") {
+        document.getElementById("fx").innerHTML = 'f(x) = (<input type="number" name="fx-1" id="fx-1" value="5">/x)+<input type="number" name="fx-2" id="fx-2" value="0">';
+      } else if (document.getElementById("func-type-1").value == "wykladnicza-1") {
+        document.getElementById("fx").innerHTML = 'f(x) = <input type="number" name="fx-1" id="fx-1" value="0.5"><sup>x</sup>+<input type="number" name="fx-2" id="fx-2" value="0">';
+      } else if (document.getElementById("func-type-1").value == "logarytm-1") {
+        document.getElementById("fx").innerHTML = 'f(x) = <input type="number" name="fx-1" id="fx-1" value="1">•log<sub><input type="number" name="fx-2" id="fx-2" value="0.5"></sub>(x)+<input type="number" name="fx-3" id="fx-3" value="0">';
+      }
+    }
+
+    function func2() {
+      if (document.getElementById("func-type-2").value == "wielomian-2") {
+        document.getElementById("gx").innerHTML = 'g(x) = <input type="number" name="gx-1" id="gx-1" value="0">•x<sup>4</sup>+<input type="number" name="gx-2" id="gx-2" value="0">•x<sup>3</sup>+<input type="number" name="gx-3" id="gx-3" value="0">•x<sup>2</sup>+<input type="number" name="gx-4" id="gx-4" value="0.5">•x+<input type="number" name="gx-5" id="gx-5" value="2">';
+      } else if (document.getElementById("func-type-2").value == "odwrotna-2") {
+        document.getElementById("gx").innerHTML = 'g(x) = (<input type="number" name="gx-1" id="gx-1" value="-5">/x)+<input type="number" name="gx-2" id="gx-2" value="0">';
+      } else if (document.getElementById("func-type-2").value == "wykladnicza-2") {
+        document.getElementById("gx").innerHTML = 'g(x) = <input type="number" name="gx-1" id="gx-1" value="2"><sup>x</sup>+<input type="number" name="gx-2" id="gx-2" value="0">';
+      } else if (document.getElementById("func-type-2").value == "logarytm-2") {
+        document.getElementById("gx").innerHTML = 'g(x) = <input type="number" name="gx-1" id="gx-1" value="1">•log<sub><input type="number" name="gx-2" id="gx-2" value="2"></sub>(x)+<input type="number" name="gx-3" id="gx-3" value="0">';
+      }
+    }
+
+  </script>  
+
   </body>
 </html>

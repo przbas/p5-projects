@@ -82,6 +82,34 @@ function draw() {
         y = a*x*x*x*x +b*x*x*x +c*x*x +d*x +e;
         point(ox+x*s,h-oy-(y*s));
       }  
+    } else if (document.getElementById("func-type-1").value == "odwrotna-1") {
+      a = document.getElementById("fx-1").value*1;
+      b = document.getElementById("fx-2").value*1;
+      stroke(document.getElementById("color-1").value);
+      for (let i = 0; i < w*10; i++) {
+        x = (i/10-ox)/s;
+        y = a/x +b;
+        point(ox+x*s,h-oy-(y*s));
+      }     
+    } else if (document.getElementById("func-type-1").value == "wykladnicza-1") {
+      a = document.getElementById("fx-1").value*1;
+      b = document.getElementById("fx-2").value*1;
+      stroke(document.getElementById("color-1").value);
+      for (let i = 0; i < w*10; i++) {
+        x = (i/10-ox)/s;
+        y = pow(a, x) +b;
+        point(ox+x*s,h-oy-(y*s));
+      }     
+    } else if (document.getElementById("func-type-1").value == "logarytm-1") {
+      a = document.getElementById("fx-1").value*1;
+      b = document.getElementById("fx-2").value*1;
+      c = document.getElementById("fx-3").value*1;
+      stroke(document.getElementById("color-1").value);
+      for (let i = 0; i < w*10; i++) {
+        x = (i/10-ox)/s;
+        y = a*(log(x)/log(b)) +c;
+        point(ox+x*s,h-oy-(y*s));
+      }     
     }
     
 
@@ -98,6 +126,34 @@ function draw() {
         y = a*x*x*x*x +b*x*x*x +c*x*x +d*x +e;
         point(ox+x*s,h-oy-(y*s));
       }
+    } else if (document.getElementById("func-type-2").value == "odwrotna-2") {
+      a = document.getElementById("gx-1").value*1;
+      b = document.getElementById("gx-2").value*1;
+      stroke(document.getElementById("color-2").value);
+      for (let i = 0; i < w*10; i++) {
+        x = (i/10-ox)/s;
+        y = a/x +b;
+        point(ox+x*s,h-oy-(y*s));
+      }     
+    } else if (document.getElementById("func-type-2").value == "wykladnicza-2") {
+      a = document.getElementById("gx-1").value*1;
+      b = document.getElementById("gx-2").value*1;
+      stroke(document.getElementById("color-2").value);
+      for (let i = 0; i < w*10; i++) {
+        x = (i/10-ox)/s;
+        y = pow(a, x) +b;
+        point(ox+x*s,h-oy-(y*s));
+      }     
+    } else if (document.getElementById("func-type-2").value == "logarytm-2") {
+      a = document.getElementById("gx-1").value*1;
+      b = document.getElementById("gx-2").value*1;
+      c = document.getElementById("gx-3").value*1;
+      stroke(document.getElementById("color-2").value);
+      for (let i = 0; i < w*10; i++) {
+        x = (i/10-ox)/s;
+        y = a*(log(x)/log(b)) +c;
+        point(ox+x*s,h-oy-(y*s));
+      }     
     }
 }
 
