@@ -59,6 +59,7 @@ html, body {
   }
 
   .button {
+    font-size: large;
     margin: 10px;
     height: 40px;
     width: 40px;

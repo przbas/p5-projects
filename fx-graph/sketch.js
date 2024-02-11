@@ -8,6 +8,42 @@ let w = 800,
     oy= 0;
 
 
+
+function keyReleased() {
+  if (keyCode === LEFT_ARROW) {
+    xmin=1*xmin-1;
+    xmax=1*xmax-1;
+    document.getElementById("xmin").value = xmin;
+    document.getElementById("xmax").value = xmax;
+  } else if (keyCode === RIGHT_ARROW) {
+    xmin=1*xmin+1;
+    xmax=1*xmax+1;
+    document.getElementById("xmin").value = xmin;
+    document.getElementById("xmax").value = xmax;
+  } else if (keyCode === UP_ARROW) {
+    ymin=1*ymin+1;
+    document.getElementById("ymin").value = ymin;
+  } else if (keyCode === DOWN_ARROW) {
+    ymin=1*ymin-1;
+    document.getElementById("ymin").value = ymin;
+  } else if (keyCode === 107) {
+    ymin=1*ymin+1;
+    document.getElementById("ymin").value = ymin;
+    xmin=1*xmin+1;
+    xmax=1*xmax-1;
+    document.getElementById("xmin").value = xmin;
+    document.getElementById("xmax").value = xmax;
+  } else if (keyCode === 109) {
+    ymin=1*ymin-1;
+    document.getElementById("ymin").value = ymin;
+    xmin=1*xmin-1;
+    xmax=1*xmax+1;
+    document.getElementById("xmin").value = xmin;
+    document.getElementById("xmax").value = xmax;
+  }
+}
+
+
 function setup() {
     createCanvas(w, h);
     xmin = document.getElementById("xmin").value;
@@ -155,38 +191,25 @@ function draw() {
         point(ox+x*s,h-oy-(y*s));
       }     
     }
+
+    //f(x) dowolna
+    if (document.getElementById("func-type-1").value == "dowolna-1") {
+      stroke(document.getElementById("color-1").value);
+      for (let i = 0; i < w*10; i++) {
+        x = (i/10-ox)/s;
+        y = 2*x*x + 7*x; // tu zmienic
+        point(ox+x*s,h-oy-(y*s));
+      }
+    }
+
+    //g(x) dowolna
+    if (document.getElementById("func-type-2").value == "dowolna-2") {
+      stroke(document.getElementById("color-2").value);
+      for (let i = 0; i < w*10; i++) {
+        x = (i/10-ox)/s;
+        y = -2*x + 6; // tu zmienic
+        point(ox+x*s,h-oy-(y*s));
+      }
+    }
 }
 
-function keyReleased() {
-  if (keyCode === LEFT_ARROW) {
-    xmin=1*xmin-1;
-    xmax=1*xmax-1;
-    document.getElementById("xmin").value = xmin;
-    document.getElementById("xmax").value = xmax;
-  } else if (keyCode === RIGHT_ARROW) {
-    xmin=1*xmin+1;
-    xmax=1*xmax+1;
-    document.getElementById("xmin").value = xmin;
-    document.getElementById("xmax").value = xmax;
-  } else if (keyCode === UP_ARROW) {
-    ymin=1*ymin+1;
-    document.getElementById("ymin").value = ymin;
-  } else if (keyCode === DOWN_ARROW) {
-    ymin=1*ymin-1;
-    document.getElementById("ymin").value = ymin;
-  } else if (keyCode === 107) {
-    ymin=1*ymin+1;
-    document.getElementById("ymin").value = ymin;
-    xmin=1*xmin+1;
-    xmax=1*xmax-1;
-    document.getElementById("xmin").value = xmin;
-    document.getElementById("xmax").value = xmax;
-  } else if (keyCode === 109) {
-    ymin=1*ymin-1;
-    document.getElementById("ymin").value = ymin;
-    xmin=1*xmin-1;
-    xmax=1*xmax+1;
-    document.getElementById("xmin").value = xmin;
-    document.getElementById("xmax").value = xmax;
-  }
-}
