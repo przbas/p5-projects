@@ -46,6 +46,7 @@ function keyReleased() {
 
 function setup() {
     createCanvas(w, h);
+    frameRate(5);
     xmin = document.getElementById("xmin").value;
     xmax = document.getElementById("xmax").value;
     ymin = document.getElementById("ymin").value;
